@@ -20,4 +20,4 @@ namespace Core.Extensions
             return claimsPrincipal?.Claims(ClaimTypes.Role);
         }
     }
-} 
+}

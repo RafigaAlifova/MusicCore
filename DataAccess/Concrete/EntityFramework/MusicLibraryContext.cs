@@ -6,6 +6,10 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class MusicLibraryContext : DbContext
     {
+        public DbSet<Music> Musics { get; set; }
+        public DbSet<Genre> Genres { get; set; }
+        public DbSet<Singer> Singers { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder

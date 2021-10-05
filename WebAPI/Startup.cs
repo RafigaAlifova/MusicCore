@@ -33,6 +33,7 @@ namespace WebAPI
                 new CoreModule()
             });
 
+            //.. Cors erroru- yeni iznnin ypxdur, altdaki koda frontendimizn linkini qoyuruq ki izn verilsin.
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowOrigin", builder =>

@@ -7,7 +7,7 @@ namespace Core.Utilities.Results.Concrete
         {
         }
 
-        public SuccessResult( string message) : base(true, message)
+        public SuccessResult(string message) : base(true, message)
         {
         }
     }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
+
 namespace Core.DataAccess.Abstract
 {
     public interface IEntityRepository<T>

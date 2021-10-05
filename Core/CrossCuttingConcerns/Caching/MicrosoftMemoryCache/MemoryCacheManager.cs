@@ -60,7 +60,7 @@ namespace Core.CrossCuttingConcerns.Caching.MicrosoftMemoryCache
                 | RegexOptions.Compiled
                 | RegexOptions.IgnoreCase);
 
-            var keysToRemove = cacheCollectionValues.Where(c => regex.IsMatch(c.Key.ToString())).Select(c=>c.Key).ToList();
+            var keysToRemove = cacheCollectionValues.Where(c => regex.IsMatch(c.Key.ToString())).Select(c => c.Key).ToList();
 
             foreach (var key in keysToRemove)
             {

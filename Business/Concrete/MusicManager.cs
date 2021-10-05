@@ -51,6 +51,7 @@ namespace Business.Concrete
         [CacheRemoveAspect("Get")]
         public IResult Delete(Music music)
         {
+            ValidatorTool.ValidateGeneric<Music>(music, new MusicValidator());
             _musicDal.Delete(music);
             return new SuccessResult(Messages.DeleteMusic);
         }
@@ -58,6 +59,7 @@ namespace Business.Concrete
         [ValidationAspect(typeof(MusicValidator))]
         public IResult Update(Music music)
         {
+            ValidatorTool.ValidateGeneric<Music>(music, new MusicValidator());
             _musicDal.Update(music);
             return new SuccessResult(Messages.UpdateMusic);
         }
@@ -121,7 +123,7 @@ namespace Business.Concrete
             if (result)
             {
                 return new ErrorResult(Messages.MusicNameAlreadyExists);
-            }
+    }
             return new SuccessResult();
         } 
 
