@@ -71,5 +71,6 @@ namespace Core.DataAccess.Concrete.EntityFramework
                 return (int)result + 1;
             }
         }
+        
     }
 }

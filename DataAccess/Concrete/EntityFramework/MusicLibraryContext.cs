@@ -16,10 +16,6 @@ namespace DataAccess.Concrete.EntityFramework
                 .UseSqlServer(@"server = (localdb)\MSSQLLocalDB; DataBase = MusicDb;Trusted_connection = true");
         }
 
-        public DbSet<Music> Musics { get; set; }
-        public DbSet<Genre> Genres { get; set; }
-        public DbSet<Singer> Singers { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new MusicMap());

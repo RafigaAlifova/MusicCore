@@ -3,7 +3,6 @@ using Core.Utilities.Interceptors;
 using Core.IoC;
 using Castle.DynamicProxy;
 using Microsoft.Extensions.DependencyInjection;
-using System.Linq;
 
 namespace Core.Aspects.Autofac.Caching
 {

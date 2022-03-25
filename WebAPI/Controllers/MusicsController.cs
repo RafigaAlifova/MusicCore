@@ -62,7 +62,7 @@ namespace WebAPI.Controllers
             return BadRequest(result.Message); 
         }
 
-        [HttpGet("getgenres")]   // ../api/Musics/getgenres?genreid=9
+        [HttpGet("getgenres")]   // ../api/Musics/getgenres?genreId=9
         public IActionResult GetByGenreId(int genreId)
         {
             var result = this._musicService.GetByGenreId(genreId);

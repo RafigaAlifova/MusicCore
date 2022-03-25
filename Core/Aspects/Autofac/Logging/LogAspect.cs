@@ -14,11 +14,10 @@ namespace Core.Aspects.Autofac.Logging
         public LogAspect(Type loggerService)
         {
             if (loggerService!=typeof(LoggerServiceBase))
-            {
-                throw new System.Exception("Wrong logger type");
+           throw new System.Exception("Wrong logger type");
 
                 this._loggerService = (LoggerServiceBase)Activator.CreateInstance(loggerService);
-            }
+            
 
         }
         protected override void OnBefore(IInvocation invocation)

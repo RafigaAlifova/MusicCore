@@ -21,6 +21,9 @@ namespace Business.IoC.Autofac
             builder.RegisterType<MusicManager>().As<IMusicService>();
             builder.RegisterType<GenreManager>().As<IGenreService>();
             builder.RegisterType<SingerManager>().As<ISingerService>();
+            //builder.RegisterType<AuthManager>().As<IAuthService>().SingleInstance();
+            //builder.RegisterType<JwtHelper>().As<ITokenHelper>().SingleInstance();
+
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 

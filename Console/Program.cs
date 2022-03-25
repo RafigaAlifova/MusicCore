@@ -7,8 +7,39 @@ namespace Console
         static void Main(string[] args)
         {
             var manager = new PrinterManager(new Printer());
+          //  var manager = new PrinterManager(new ModernPrinter());
+            //  manager.PrintBase("Worked!");
+            //  System.Console.ReadLine();
         }
     }
+
+
+    //[AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = false)]
+    //class ManagerAttribute : Attribute
+    //{
+    //    public string Message { get; set; }
+    //    public ManagerAttribute(string debugMessage)
+    //    {
+    //        this.Message = debugMessage;
+    //    }
+    //}
+
+    //static class Debugger
+    //{
+    //    public static void Debug(Type manager)
+    //    {
+    //        List<string> messages = manager
+    //            .GetCustomAttributes(typeof(ManagerAttribute), true)
+    //            .Cast<ManagerAttribute>().Select(a => a.Message)
+    //            .ToList();
+    //        foreach (var message in messages)
+    //        {
+    //            System.Diagnostics.Debug.WriteLine(message);
+    //        }
+    //    }
+    //}
+
+    //    [Manager("PrinterManager called!")]
     class PrinterManager
     {
         private IPrinter _printer;
@@ -16,6 +47,8 @@ namespace Console
         public PrinterManager(IPrinter printer)
         {
             _printer = printer;
+            // Console.Debugger.Debug(typeof(PrinterManager));
+
         }
 
         public void PrinterBase(string data)
@@ -29,20 +62,23 @@ namespace Console
         void Print(string data);
     }
 
-    [Obsolete("This class is obsolete because of low performance. Use ModernPrinter instead of this")] 
-    class Printer:IPrinter
-    {
-        public void Print(string data)
-        {
-            //...
-        }
-    }
-
     class ModernPrinter:IPrinter
     {
         public void Print(string data)
         {
             //...
+            System.Console.WriteLine(data);
+
+        }
+    }
+    [Obsolete("This class is obsolete because of low performance. Use ModernPrinter instead of this")]  //
+    class Printer : IPrinter
+    {
+        public void Print(string data)
+        {
+            //...
+            System.Console.WriteLine(data);
+
         }
     }
 }

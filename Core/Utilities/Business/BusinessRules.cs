@@ -17,3 +17,4 @@ namespace Core.Utilities.Business
         }
     }
 }
+//kompe exre page
